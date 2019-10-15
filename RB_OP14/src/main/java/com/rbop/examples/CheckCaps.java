@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.*;
 import java.util.regex.Pattern;
 
-import org.apache.commons.collections.list.FixedSizeList;
+
 import org.apache.commons.lang3.StringUtils;
 
 //Check for title case capitalisation

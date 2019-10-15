@@ -13,7 +13,6 @@ public class OPMain {
 
     public static void main(String args[]) {
         try {
-            //NEED TO PASS USERNAME & PASSWORD
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/i2kdocs","root","Qw58v6A8");
             ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 28 * FROM ALIST_GEOGRAPHY");
             /* Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_rb3");
