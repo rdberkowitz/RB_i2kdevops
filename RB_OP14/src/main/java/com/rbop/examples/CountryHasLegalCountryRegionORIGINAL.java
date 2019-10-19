@@ -37,16 +37,14 @@ public class CountryHasLegalCountryRegionORIGINAL extends SingleRowRule {
 
             //Go thru all columns in rs and UpdateRow
             String country = rs.getString("Country");
-            String countryregion = rs.getString("Country Region");
-            // String countryregion = rs.getString("Country_Region");
+            String countryregion = rs.getString("Country_Region");
             if (country == null) { country = ""; }
             if (countryregion == null) { countryregion = ""; }
             List<String> countries = Arrays.asList(country.trim().split(";"));
             List<String> countryregions = Arrays.asList(countryregion.trim().split(";"));
 
             String country2 = UpdateRow.get("Country");
-            String countryregion2 = UpdateRow.get("Country Region");
-          //  String countryregion2 = UpdateRow.get("Country_Region");
+            String countryregion2 = UpdateRow.get("Country_Region");
             if (country2 == "") { country2 = country; }
             if (countryregion2 == "") { countryregion2 = countryregion; }
             List<String> countries2 = Arrays.asList(country2.trim().split(";"));
@@ -85,8 +83,7 @@ public class CountryHasLegalCountryRegionORIGINAL extends SingleRowRule {
                                     removers.add(cr);
                                     String suggestion = String.join(";", removers);
                                     errs = new ArrayList();
-                                    errors.put("Country Region", "SUGGESTION: REMOVE '"+suggestion+"'(Country implies countryregion); ");
-                                  //  errors.put("Country_Region", "SUGGESTION: REMOVE '"+suggestion+"'(Country implies countryregion); ");
+                                    errors.put("Country_Region", "SUGGESTION: REMOVE '"+suggestion+"'(Country implies countryregion); ");
                                 }
                             }
                         }

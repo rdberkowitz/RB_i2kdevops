@@ -22,15 +22,15 @@ public class OPMain {
             Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all_rb4");
             ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 3500 * FROM ALIST_GEOGRAPHY_ALL_rb4");
          */  // List<String> headers = Arrays.asList(new String[]{"ROW NO.","Mapped_Term","Tag","Oilfield_Places","Source","Comments","Date","Editor","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Type","County","Size_Class","Fully_Resolved","Companies","Operator","Onshore_Offshore"});
-            List<String> headers = Arrays.asList(new String[]{"Id","Term","Region", "Country", "Country Region", "Basin", "Leasing Area", "Block", "Field", "Formation", "Well"});
+            List<String> headers = Arrays.asList(new String[]{"Id","Term","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well"});
             HashMap<Integer, ArrayList> OUTPUT = new HashMap<>();
             List<SingleRowRule> rules = new ArrayList();
 
             ResultSetMetaData rsmd = rs.getMetaData();
             int columnCount = rsmd.getColumnCount();
+            System.out.println("===========HEADER NAMES===========");
             for (int i = 1; i <= columnCount; i++ ) {
                 String name = rsmd.getColumnName(i);
-                System.out.println("===========HEADER NAMES===========");
                 System.out.println(name);
                 // Do stuff with name
             }

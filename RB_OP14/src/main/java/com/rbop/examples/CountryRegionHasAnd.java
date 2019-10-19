@@ -29,13 +29,11 @@ public class CountryRegionHasAnd extends SingleRowRule {
             this.rowRealValues = rowRealValues.join(",",realVals);
 
             //Go thru all columns in rs and UpdateRow
-            String countryregion = rs.getString("Country Region");
-            //String countryregion = rs.getString("Country_Region");
+            String countryregion = rs.getString("Country_Region");
             if (countryregion == null) { countryregion = "";}
             List<String> countryregions = Arrays.asList(countryregion.split(";")); //list of actual countryregions in the row
 
-            String countryregion2 = UpdateRow.get("Country Region");
-          //  String countryregion2 = UpdateRow.get("Country_Region");
+            String countryregion2 = UpdateRow.get("Country_Region");
             if (countryregion2 == "") { countryregion2 = countryregion; }
             List<String> countryregions2 = Arrays.asList(countryregion2.trim().split(";"));
 
@@ -54,8 +52,7 @@ public class CountryRegionHasAnd extends SingleRowRule {
                         keeps.add(coureg);
                     }
                     if (errs.size()>0) {
-                        errors.put("Country Region", "SUGGESTION: Split '" + String.join(";", errs) + "'into two values; ");
-                       // errors.put("Country_Region", "SUGGESTION: Split '" + String.join(";", errs) + "'into two values; ");
+                        errors.put("Country_Region", "SUGGESTION: Split '" + String.join(";", errs) + "'into two values; ");
                     }
                 }
             }

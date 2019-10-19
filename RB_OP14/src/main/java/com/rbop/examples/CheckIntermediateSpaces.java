@@ -17,7 +17,7 @@ public class CheckIntermediateSpaces extends SingleRowRule {
     }
 
     public RuleResult evaluate(ResultSet rs, Map<String, String> UpdateRow) {
-        List<String> cols = Arrays.asList(new String[]{"Region", "Country", "Country Region", "Basin", "Leasing Area", "Block", "Field",  "Formation"});
+        List<String> cols = Arrays.asList(new String[]{"Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field",  "Formation"});
     // List<String> cols = Arrays.asList(new String[]{"Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field",  "Formation", "Well","Rock_Type", "Geologic_Age", "Onshore_Offshore"});
         Pattern SPACES = Pattern.compile("\\s{2,}");
         Map<String, String> errors = new HashMap<>();

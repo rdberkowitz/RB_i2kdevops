@@ -19,7 +19,7 @@ public class CheckCaps extends SingleRowRule {
     }
     public RuleResult evaluate(ResultSet rs, Map<String, String> UpdateRow) {
         List<String> smallwords = FixedLists.Smallwords;
-        List<String> cols = Arrays.asList(new String[]{"Region", "Country", "Country Region", "Basin", "Leasing Area", "Block", "Field",  "Formation", "Well"});
+        List<String> cols = Arrays.asList(new String[]{"Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field",  "Formation", "Well"});
        //   List<String> cols = Arrays.asList(new String[]{"Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field",  "Formation", "Well","Rock_Type", "Geologic_Age", "Onshore_Offshore"});
         Map<String, String> errors = new HashMap<>();
         List<String> realVals = new ArrayList();

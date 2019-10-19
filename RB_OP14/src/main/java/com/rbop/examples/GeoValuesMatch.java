@@ -54,8 +54,7 @@ public class GeoValuesMatch extends SingleRowRule {
             //Go thru all columns in rs and UpdateRow
             String region = rs.getString("Region");
             String country = rs.getString("Country");
-            String countryregion = rs.getString("Country Region");
-           //String countryregion = rs.getString("Country_Region");
+            String countryregion = rs.getString("Country_Region");
             if (region == null) {
                 region = "";
             }
@@ -71,8 +70,7 @@ public class GeoValuesMatch extends SingleRowRule {
 
             String region2 = UpdateRow.get("Region");
             String country2 = UpdateRow.get("Country");
-            String countryregion2 = UpdateRow.get("Country Region");
-         //   String countryregion2 = UpdateRow.get("Country_Region");
+            String countryregion2 = UpdateRow.get("Country_Region");
             if (region2 == "") {
                 region2 = region;
             }
@@ -244,8 +242,7 @@ public class GeoValuesMatch extends SingleRowRule {
                 List<String> Suggestion = new ArrayList();
                 Suggestion.addAll(addnews_coureg);Suggestion.addAll(keeps_coureg);
                 String suggestion = String.join(";",Suggestion);
-                errors.put("Country Region", "SUGGESTION: REMOVE '" + String.join(";", errs_coureg) + "'(CountryReg doesn't match Region/Country); ");
-              //  errors.put("Country_Region", "SUGGESTION: REMOVE '" + String.join(";", errs_coureg) + "'(CountryReg doesn't match Region/Country); ");
+                errors.put("Country_Region", "SUGGESTION: REMOVE '" + String.join(";", errs_coureg) + "'(CountryReg doesn't match Region/Country); ");
             }
 
 
@@ -411,8 +408,7 @@ public class GeoValuesMatch extends SingleRowRule {
                     List<String> Suggestion = new ArrayList();
                     Suggestion.addAll(addnews_coureg2);Suggestion.addAll(keeps_coureg2);
                     String suggestion = String.join(";",Suggestion);
-                    UpdateRow.put("Country Region", suggestion);
-                   // UpdateRow.put("Country_Region", suggestion);
+                    UpdateRow.put("Country_Region", suggestion);
                 }
 
 

@@ -20,7 +20,7 @@ public class SuggestDifferentColumn extends SingleRowRule {
     public RuleResult evaluate(ResultSet rs, Map<String, String> UpdateRow) {
 
         //Things to compare
-        List<String> comps = Arrays.asList(new String[]{"Region", "Country", "Country Region", "Basin", "Leasing Area", "Block", "Field", "Formation", "Well"});
+        List<String> comps = Arrays.asList(new String[]{"Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well"});
       //  List<String> comps = Arrays.asList(new String[]{"Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Type", "County", "Size_Class", "Fully_Resolved", "Onshore_Offshore"});
 
         //Things that are part of a canonical name
