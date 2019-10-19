@@ -19,7 +19,8 @@ public class IllegalCharactersRule extends SingleRowRule {
     public RuleResult evaluate(ResultSet rs , Map<String, String> UpdateRow) {
         Map<String, String> cols = FixedLists.WeirdChars;
         //List<String> keys = Arrays.asList(new String[]{"Mapped_Term", "Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Onshore_Offshore"});
-        List<String> keys = Arrays.asList(new String[]{"Mapped_Term", "Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well"});
+        List<String> keys = Arrays.asList(new String[]{"Term", "Region", "Country", "Country Region", "Basin", "Leasing Area", "Block", "Field", "Formation", "Well"});
+      //  List<String> keys = Arrays.asList(new String[]{"Mapped_Term", "Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well"});
         List<String> chars = new ArrayList<>(cols.keySet());
         Map<String, String> errors = new HashMap<>();
         List<String> realVals = new ArrayList();

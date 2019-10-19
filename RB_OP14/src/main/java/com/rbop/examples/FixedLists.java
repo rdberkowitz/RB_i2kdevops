@@ -39,7 +39,7 @@ public class FixedLists {
 
         //then add each list of pairs to the map
         Map<String, List<Pair<String, String>>> aMap = new HashMap<>();
-        aMap.put("Rock_Type", rocktypeSynonyms);
+     //   aMap.put("Rock_Type", rocktypeSynonyms);
         aMap.put("Country", countrySynonyms);
       //  aMap.put("Country_Region", countryregionSynonyms);
         MappedValues = Collections.unmodifiableMap(aMap);
@@ -58,10 +58,10 @@ public class FixedLists {
     public static final Map<String, List<String>> LegalValues;
     static {
         Map<String, List<String>> aMap = new HashMap<>();
-        aMap.put("Geologic_Age", Arrays.asList(new String[]{"PALEOCENE","DANIAN","TITHONIAN","LEONARDIAN","WOLFCAMPIAN", "TRIASSIC", "PERMIAN", "MIOCENE", "JURASSIC", "CRETACEOUS", "TURONIAN", "SILURIAN", "PLIOCENE", "PENNSYLVANIAN", "PALEOZOIC", "PALEOGENE", "ORDOVICIAN", "OLIGOCENE", "NEOGENE", "MISSISSIPPIAN", "MIOCENE", "EOCENE", "DEVONIAN", "MESSIANIAN", "TERTIARY", "ALBIAN", "KIMMERIDGIAN", "GUADALUPIAN", "FURONGIAN", "GIVETIAN", "CENOMANIAN", "CARBONIFEROUS", "APTIAN", "BARREMIAN", "ALBIAN", "MESOZOIC", "PLEISTOCENE", "CENOZOIC", "CAMBRIAN"}));
-        aMap.put("Rock_Type", Arrays.asList(new String[]{"SANDSTONE", "SHALE", "CARBONATE", "TURBIDITE", "SILTSTONE", "LIMESTONE"}));
-        aMap.put("Onshore_Offshore", Arrays.asList(new String[]{"ONSHORE", "OFFSHORE"}));
-        aMap.put("Type", Arrays.asList(new String[]{"OIL", "GAS", "CONDENSATE", "HEAVY OIL","BITUMEN","COAL","COALBED METHANE"}));
+      //  aMap.put("Geologic_Age", Arrays.asList(new String[]{"PALEOCENE","DANIAN","TITHONIAN","LEONARDIAN","WOLFCAMPIAN", "TRIASSIC", "PERMIAN", "MIOCENE", "JURASSIC", "CRETACEOUS", "TURONIAN", "SILURIAN", "PLIOCENE", "PENNSYLVANIAN", "PALEOZOIC", "PALEOGENE", "ORDOVICIAN", "OLIGOCENE", "NEOGENE", "MISSISSIPPIAN", "MIOCENE", "EOCENE", "DEVONIAN", "MESSIANIAN", "TERTIARY", "ALBIAN", "KIMMERIDGIAN", "GUADALUPIAN", "FURONGIAN", "GIVETIAN", "CENOMANIAN", "CARBONIFEROUS", "APTIAN", "BARREMIAN", "ALBIAN", "MESOZOIC", "PLEISTOCENE", "CENOZOIC", "CAMBRIAN"}));
+      //  aMap.put("Rock_Type", Arrays.asList(new String[]{"SANDSTONE", "SHALE", "CARBONATE", "TURBIDITE", "SILTSTONE", "LIMESTONE"}));
+      //  aMap.put("Onshore_Offshore", Arrays.asList(new String[]{"ONSHORE", "OFFSHORE"}));
+      //  aMap.put("Type", Arrays.asList(new String[]{"OIL", "GAS", "CONDENSATE", "HEAVY OIL","BITUMEN","COAL","COALBED METHANE"}));
         LegalValues = Collections.unmodifiableMap(aMap);
     }
 

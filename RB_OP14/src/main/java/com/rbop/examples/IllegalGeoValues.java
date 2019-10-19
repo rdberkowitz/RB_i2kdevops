@@ -52,7 +52,8 @@ public class IllegalGeoValues extends SingleRowRule {
             //Go thru all columns in rs and UpdateRow
             String region = rs.getString("Region");
             String country = rs.getString("Country");
-            String countryregion = rs.getString("Country_Region");
+            String countryregion = rs.getString("Country Region");
+           // String countryregion = rs.getString("Country_Region");
             if (region == null) { region = "";}
             if (country == null) { country = "";}
             if (countryregion == null) { countryregion = "";}
@@ -63,7 +64,8 @@ public class IllegalGeoValues extends SingleRowRule {
 
             String region2 = UpdateRow.get("Region");
             String country2 = UpdateRow.get("Country");
-            String countryregion2 = UpdateRow.get("Country_Region");
+            String countryregion2 = UpdateRow.get("Country Region");
+            //String countryregion2 = UpdateRow.get("Country_Region");
 
             if (region2 == "") { region2 = region; }
             if (country2 == "") { country2 = country; }
@@ -119,7 +121,8 @@ public class IllegalGeoValues extends SingleRowRule {
                         keeps.add(coureg);
                     }
                     if (errs.size()>0) {
-                        errors.put("Country_Region", "SUGGESTION: REMOVE '" + String.join(";", errs) + "'(Illegal value); ");
+                        errors.put("Country Region", "SUGGESTION: REMOVE '" + String.join(";", errs) + "'(Illegal value); ");
+                      //  errors.put("Country_Region", "SUGGESTION: REMOVE '" + String.join(";", errs) + "'(Illegal value); ");
                     }
                 }
             }
@@ -172,7 +175,8 @@ public class IllegalGeoValues extends SingleRowRule {
                             keeps.add(coureg);
                         }
                         if (errs.size()>0) {
-                            UpdateRow.put("Country_Region", String.join(";", keeps));
+                            UpdateRow.put("Country Region", String.join(";", keeps));
+                            //UpdateRow.put("Country_Region", String.join(";", keeps));
                         }
                     }
                 }

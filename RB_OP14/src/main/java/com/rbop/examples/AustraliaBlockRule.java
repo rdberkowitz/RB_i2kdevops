@@ -19,7 +19,8 @@ public class AustraliaBlockRule extends SingleRowRule {
     }
 
     public RuleResult evaluate(ResultSet rs, Map<String, String> UpdateRow) {
-        List<String> cols = Arrays.asList(new String[]{"Country", "Country_Region", "Leasing_Area", "Block"});
+        List<String> cols = Arrays.asList(new String[]{"Country", "Country Region", "Leasing Area", "Block"});
+      //  List<String> cols = Arrays.asList(new String[]{"Country", "Country_Region", "Leasing_Area", "Block"});
         Map<String, String> errors = new HashMap<>();
         List<String> realVals = new ArrayList();
 
@@ -38,8 +39,10 @@ public class AustraliaBlockRule extends SingleRowRule {
             String country = rs.getString("Country");
             if (country == null) { country = ""; }
             if (!country.equals("") && country.contains("Australia")){
-                String country_region = rs.getString("Country_Region");
-                String leasing_area = rs.getString("Leasing_Area");
+                String country_region = rs.getString("Country Region");
+                //String country_region = rs.getString("Country_Region");
+                String leasing_area = rs.getString("Leasing Area");
+                //String leasing_area = rs.getString("Leasing_Area");
                 if (leasing_area == null) { leasing_area = ""; }
                 String block = rs.getString("Block");
                 if (block == null) { block = ""; }
@@ -141,15 +144,19 @@ public class AustraliaBlockRule extends SingleRowRule {
                 String country2 = UpdateRow.get("Country");
                 if (country2 == "") { country2 = country; }
                 if (!country2.equals("") &&country2.contains("Australia")) {
-                    String country_region = rs.getString("Country_Region");
+                    String country_region = rs.getString("Country Region");
+                   // String country_region = rs.getString("Country_Region");
                     if (country_region == null) { country_region = ""; }
-                    String leasing_area = rs.getString("Leasing_Area");
+                    String leasing_area = rs.getString("Leasing Area");
+                  //  String leasing_area = rs.getString("Leasing_Area");
                     if (leasing_area == null) { leasing_area = ""; }
                     String block = rs.getString("Block");
                     if (block == null) { block = ""; }
-                    String country_region2 = UpdateRow.get("Country_Region");
+                    String country_region2 = UpdateRow.get("Country Region");
+                    //String country_region2 = UpdateRow.get("Country_Region");
                     if (country_region2 == "") { country_region2 = country_region; }
-                    String leasing_area2 = UpdateRow.get("Leasing_Area");
+                    String leasing_area2 = UpdateRow.get("Leasing Area");
+                  //  String leasing_area2 = UpdateRow.get("Leasing_Area");
                     if (leasing_area2 == "") { leasing_area2 = leasing_area;}
                     String block2 = UpdateRow.get("Block");
                     if (block2 == "") { block = block; }
@@ -190,7 +197,8 @@ public class AustraliaBlockRule extends SingleRowRule {
                             //Suggest removing Leasing Areas that should be blocks
                         if (removeleasingareas.size() > 0) {
                             String suggestion = String.join(";", okleasingareas);
-                            UpdateRow.put("Leasing_Area", suggestion);
+                            UpdateRow.put("Leasing Area", suggestion);
+                            //UpdateRow.put("Leasing_Area", suggestion);
                         }
 
                         //CHECK IF BLOCK VALUES ARE LEGAL AND IF LEASING AREAS NEED TO BE ADDED

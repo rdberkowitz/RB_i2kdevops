@@ -15,13 +15,13 @@ public class OPMain {
         try {
 
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/i2kdocs","root","Qw58v6A8");
-            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 0 LIMIT 10");
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 0 LIMIT 50");
             /* Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_rb3");
             ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 28 * FROM ALIST_GEOGRAPHY_rb3");
             Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all_rb4");
             ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 3500 * FROM ALIST_GEOGRAPHY_ALL_rb4");
          */  // List<String> headers = Arrays.asList(new String[]{"ROW NO.","Mapped_Term","Tag","Oilfield_Places","Source","Comments","Date","Editor","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Type","County","Size_Class","Fully_Resolved","Companies","Operator","Onshore_Offshore"});
-            List<String> headers = Arrays.asList(new String[]{"Term","Region", "Country", "Country Region", "Basin", "Leasing Area", "Block", "Field", "Formation", "Well"});
+            List<String> headers = Arrays.asList(new String[]{"Id","Term","Region", "Country", "Country Region", "Basin", "Leasing Area", "Block", "Field", "Formation", "Well"});
             HashMap<Integer, ArrayList> OUTPUT = new HashMap<>();
             List<SingleRowRule> rules = new ArrayList();
 
@@ -59,7 +59,7 @@ public class OPMain {
             ////Check two columns together////
             //Rules No. 16-18
             rules.add(new GeoValuesMatch()); //Requires REGION and COUNTRY and COUNTRYREGION values to align according to lists
-            rules.add(new OffshoreRules()); //Check value of 'offshore' words in CountryRegion and Basin vs Offshore_Onshore column
+         //   rules.add(new OffshoreRules()); //Check value of 'offshore' words in CountryRegion and Basin vs Offshore_Onshore column
             rules.add(new AustraliaBlockRule()); //Check specific errors in Australia blocks & leasing areas.
 
             ////Final capitalisation & titlecase cleanup

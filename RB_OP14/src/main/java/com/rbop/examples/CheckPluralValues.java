@@ -39,7 +39,8 @@ public class CheckPluralValues extends SingleRowRule {
         List<String> allregions = regionkeys;
         cols.put("Region",allregions);
         cols.put("Country",allcountries);
-        cols.put("Country_Region",allcountryregions);
+        cols.put("Country Region",allcountryregions);
+        //cols.put("Country_Region",allcountryregions);
 
         // Add Lists as values in the map
         List<String> keys = new ArrayList<>(cols.keySet());
