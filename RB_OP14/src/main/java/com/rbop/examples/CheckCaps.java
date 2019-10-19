@@ -73,18 +73,14 @@ public class CheckCaps extends SingleRowRule {
                 //Operate on UpdateRow value
                 if (Updater) {
                     if (!(item2.equals(""))) {
-                        System.out.println("column for CheckCaps "+c);
-                        System.out.println("update value "+item2);
                         List<String> allitems = Arrays.asList(item2.trim().split("[;]"));
-                        System.out.println("update value "+allitems);
                         boolean err = false;
                         List<String> allnewitem = new ArrayList();
                         for (String allit : allitems) {
                             List<String> item_ = Arrays.asList(allit.trim().split("(?<=\\s)|(?<=-)|(?<=\\|)"));
                             List<String> newitem = new ArrayList();
                             for (String it : item_) {
-                                if(!it.equals("")) {
-                                    System.out.println("working on "+it);
+                                if(!it.equals("")) { //condition to allow for mistakes when moving items into column
                                     String trimmed = it.trim().replaceAll("([-\\|])", "");
                                     String I = it.substring(0, 1).toUpperCase() + it.substring(1);
                                     if (!smallwords.contains(trimmed.toLowerCase()) && !it.equals(I)) {
