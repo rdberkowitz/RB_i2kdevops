@@ -119,7 +119,8 @@ public class FixedLists {
     static {
         Map<String, List<String>> aMap = new HashMap<>();
         aMap.put("Facility Type", Arrays.asList(new String[]{"LNG Project","Gas Plant", "Gas Refinery", "Oil Refinery", "Pipeline","Platform","Liquid Natural Gas Project","LPG Project"}));
-        aMap.put("Columns", Arrays.asList(new String[]{"Mapped_Term","Field"}));
+        //aMap.put("Columns", Arrays.asList(new String[]{"Mapped_Term","Field"}));
+        aMap.put("Columns", Arrays.asList(new String[]{"Field"}));
         Facilities = Collections.unmodifiableMap(aMap);
     }
 
