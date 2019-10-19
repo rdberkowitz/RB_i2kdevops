@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -15,7 +16,7 @@ public class OPMain {
         try {
 
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/i2kdocs","root","Qw58v6A8");
-            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 2 LIMIT 50");
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 0 LIMIT 50");
             /* Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_rb3");
             ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 28 * FROM ALIST_GEOGRAPHY_rb3");
             Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all_rb4");
@@ -24,6 +25,15 @@ public class OPMain {
             List<String> headers = Arrays.asList(new String[]{"Id","Term","Region", "Country", "Country Region", "Basin", "Leasing Area", "Block", "Field", "Formation", "Well"});
             HashMap<Integer, ArrayList> OUTPUT = new HashMap<>();
             List<SingleRowRule> rules = new ArrayList();
+
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int columnCount = rsmd.getColumnCount();
+            for (int i = 1; i <= columnCount; i++ ) {
+                String name = rsmd.getColumnName(i);
+                System.out.println("===========HEADER NAMES===========");
+                System.out.println(name);
+                // Do stuff with name
+            }
 
             ////Check single columns: ORDER MATTERS!!////
 
