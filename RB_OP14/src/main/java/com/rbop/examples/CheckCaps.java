@@ -43,8 +43,11 @@ public class CheckCaps extends SingleRowRule {
 
                 //Operate on rs value
                 if (!item.equals("")) {
+                    System.out.println("column for CheckCaps "+c);
+                    System.out.println("orig value "+item);
                  //   List<String> allitems = Arrays.asList(item.trim().split("[;|/]"));
                     List<String> allitems = Arrays.asList(item.trim().split("[;/]"));
+                    System.out.println("orig value "+allitems);
                     boolean err = false;
                     List<String> allnewitem = new ArrayList();
                     for (String allit:allitems){
@@ -76,6 +79,7 @@ public class CheckCaps extends SingleRowRule {
                         System.out.println("column for CheckCaps "+c);
                         System.out.println("update value "+item2);
                         List<String> allitems = Arrays.asList(item2.trim().split("[;]"));
+                        System.out.println("update value "+allitems);
                         boolean err = false;
                         List<String> allnewitem = new ArrayList();
                         for (String allit : allitems) {
