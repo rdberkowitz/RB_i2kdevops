@@ -16,7 +16,7 @@ public class OPMain {
         try {
 
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/i2kdocs","root","Qw58v6A8");
-            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 0 LIMIT 200");
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 0 LIMIT 500");
             /* Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_rb3");
             ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 28 * FROM ALIST_GEOGRAPHY_rb3");
             Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all_rb4");
@@ -87,8 +87,8 @@ public class OPMain {
                 //System.out.println("INITIAL "+UpdateRow);
                 rs.next(); //rs is a HashMap of keys
                 //define what the r value is..for each SingleRow Rule in rules, do this...
+                System.out.println(rowIndex);
                 for (SingleRowRule r : rules) {
-                    System.out.println(rowIndex);
                     RuleResult current = r.evaluateRule(rs, rowIndex, UpdateRow); //returns a rule-result
                     UpdateRow = current.getUpdateRow();
                     if (current.isBad()){ //if we find an error
