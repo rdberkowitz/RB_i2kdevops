@@ -15,7 +15,7 @@ public class OPMain {
         try {
 
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/i2kdocs","root","Qw58v6A8");
-            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 0 LIMIT 50");
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 2 LIMIT 50");
             /* Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_rb3");
             ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 28 * FROM ALIST_GEOGRAPHY_rb3");
             Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all_rb4");
@@ -119,7 +119,7 @@ public class OPMain {
             //Here's where to order OUPTUT by rowIndex
             Map<Integer,ArrayList> sortedOUTPUT = new TreeMap<Integer,ArrayList>(OUTPUT);
            // File file = new File("/Users/rachelberkowitz/i2k/myfile.csv");
-            File file = new File("~/rdberkowitz/RB_October/RB_OP14/myfile.csv");
+            File file = new File("/home/i2kdevops/rdberkowitz/RB_October/RB_OP14/myfile.csv");
             //FileWriter fileWriter = null;
             Writer fileWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8));
             try {
