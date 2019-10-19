@@ -87,7 +87,7 @@ public class OPMain {
                 //System.out.println("INITIAL "+UpdateRow);
                 rs.next(); //rs is a HashMap of keys
                 //define what the r value is..for each SingleRow Rule in rules, do this...
-                System.out.println(rowIndex);
+                System.out.println("row number "+rowIndex);
                 for (SingleRowRule r : rules) {
                     RuleResult current = r.evaluateRule(rs, rowIndex, UpdateRow); //returns a rule-result
                     UpdateRow = current.getUpdateRow();
