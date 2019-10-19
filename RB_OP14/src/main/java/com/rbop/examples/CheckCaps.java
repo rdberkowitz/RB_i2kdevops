@@ -73,6 +73,8 @@ public class CheckCaps extends SingleRowRule {
                 //Operate on UpdateRow value
                 if (Updater) {
                     if (!(item2.equals(""))) {
+                        System.out.println("column for CheckCaps "+c);
+                        System.out.println("update value "+item2);
                         List<String> allitems = Arrays.asList(item2.trim().split("[;]"));
                         boolean err = false;
                         List<String> allnewitem = new ArrayList();
