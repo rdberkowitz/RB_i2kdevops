@@ -118,7 +118,8 @@ public class OPMain {
             conn.close();
             //Here's where to order OUPTUT by rowIndex
             Map<Integer,ArrayList> sortedOUTPUT = new TreeMap<Integer,ArrayList>(OUTPUT);
-            File file = new File("/Users/rachelberkowitz/i2k/myfile.csv");
+           // File file = new File("/Users/rachelberkowitz/i2k/myfile.csv");
+            File file = new File("~/rdberkowitz/RB_October/RB_OP14/myfile.csv");
             //FileWriter fileWriter = null;
             Writer fileWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8));
             try {
