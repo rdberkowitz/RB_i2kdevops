@@ -43,11 +43,8 @@ public class CheckCaps extends SingleRowRule {
 
                 //Operate on rs value
                 if (!item.equals("")) {
-                    System.out.println("column for CheckCaps "+c);
-                    System.out.println("orig value "+item);
                  //   List<String> allitems = Arrays.asList(item.trim().split("[;|/]"));
                     List<String> allitems = Arrays.asList(item.trim().split("[;/]"));
-                    System.out.println("orig value "+allitems);
                     boolean err = false;
                     List<String> allnewitem = new ArrayList();
                     for (String allit:allitems){
@@ -86,13 +83,16 @@ public class CheckCaps extends SingleRowRule {
                             List<String> item_ = Arrays.asList(allit.trim().split("(?<=\\s)|(?<=-)|(?<=\\|)"));
                             List<String> newitem = new ArrayList();
                             for (String it : item_) {
-                                String trimmed = it.trim().replaceAll("([-\\|])","");
-                                String I = it.substring(0, 1).toUpperCase() + it.substring(1);
-                                if (!smallwords.contains(trimmed.toLowerCase()) && !it.equals(I)) {
-                                    newitem.add(I);
-                                    err = true;
-                                } else {
-                                    newitem.add(it);
+                                if(!it.equals("")) {
+                                    System.out.println("working on "+it);
+                                    String trimmed = it.trim().replaceAll("([-\\|])", "");
+                                    String I = it.substring(0, 1).toUpperCase() + it.substring(1);
+                                    if (!smallwords.contains(trimmed.toLowerCase()) && !it.equals(I)) {
+                                        newitem.add(I);
+                                        err = true;
+                                    } else {
+                                        newitem.add(it);
+                                    }
                                 }
                             }
                             String newitem_ = StringUtils.join(newitem, "");
