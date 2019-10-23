@@ -13,9 +13,11 @@ public class OPMain {
 
     public static void main(String args[]) {
         try {
-           Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_rb3");
+            Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all");
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM ALIST_GEOGRAPHY_ALL WHERE Country='Yemen'");
+           /* Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_rb3");
             ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 28 * FROM ALIST_GEOGRAPHY_rb3");
-         /*   Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all_rb4");
+            Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all_rb4");
             ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 3500 * FROM ALIST_GEOGRAPHY_ALL_rb4");
          */   List<String> headers = Arrays.asList(new String[]{"ROW NO.","Mapped_Term","Tag","Oilfield_Places","Source","Comments","Date","Editor","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Type","County","Size_Class","Fully_Resolved","Companies","Operator","Onshore_Offshore"});
           HashMap<Integer, ArrayList> OUTPUT = new HashMap<>();
