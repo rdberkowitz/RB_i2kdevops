@@ -175,7 +175,7 @@ public class OPMain {
                     fileWriter.append("\r\n");
                     //now add the UpdateRow as a 3rd row in each row of the file
                     fileWriter.append(String.valueOf(o.getKey()));
-                    fileWriter.append(" (updates)");
+                    //fileWriter.append(" (updates)");
                     fileWriter.append(Values.get(last-1).toString());
                     fileWriter.append("\r\n");
                     fileWriter.append("\r\n");
