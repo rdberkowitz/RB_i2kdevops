@@ -18,10 +18,9 @@ public class OPMain {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/i2kdocs","root","Qw58v6A8");
             ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 0 LIMIT 600");
            // ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE country = 'Yemen'");
-            /* Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_rb3");
-            ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 28 * FROM ALIST_GEOGRAPHY_rb3");
-            Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all_rb4");
-            ResultSet rs = conn.createStatement().executeQuery("SELECT TOP 3500 * FROM ALIST_GEOGRAPHY_ALL_rb4");
+            /*  VERSION FOR LOCAL H2
+            Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all");
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM ALIST_GEOGRAPHY_ALL WHERE Country='Yemen'");
          */  // List<String> headers = Arrays.asList(new String[]{"ROW NO.","Mapped_Term","Tag","Oilfield_Places","Source","Comments","Date","Editor","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Type","County","Size_Class","Fully_Resolved","Companies","Operator","Onshore_Offshore"});
             List<String> headers = Arrays.asList(new String[]{"Id","Term","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well"});
             HashMap<Integer, ArrayList> OUTPUT = new HashMap<>();
