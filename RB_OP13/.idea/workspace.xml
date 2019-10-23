@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65d1d4fe-9346-4f31-819c-8bbaf915413f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rbop/examples/OPMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rbop/examples/OPMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/rbop/examples/OPMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/rbop/examples/OPMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RB_OP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RB_Local.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rbop/examples/OPMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="1080">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
             </state>
           </provider>
         </entry>
@@ -78,7 +79,6 @@
         <option value="$PROJECT_DIR$/src/com/rbop/examples/FixedLists.java" />
         <option value="$PROJECT_DIR$/src/com/rbop/examples/SuggestDifferentColumn.java" />
         <option value="$PROJECT_DIR$/src/com/rbop/examples/OPMain.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/rbop/examples/MissingCanonicalRuleORIGINAL.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rbop/examples/RemoveWordsForOtherColumns.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rbop/examples/CellHasFacilityType.java" />
@@ -117,6 +117,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rbop/examples/CheckCaps.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rbop/examples/FixedLists.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rbop/examples/OPMain.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -128,8 +129,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="113" />
-    <option name="y" value="90" />
+    <option name="x" value="53" />
+    <option name="y" value="100" />
     <option name="width" value="1104" />
     <option name="height" value="526" />
   </component>
@@ -139,7 +140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -177,7 +177,18 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RB_OP13" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RB_OP13" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -185,7 +196,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571804552844" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571804842547" />
     <property name="last.edited.regexp" value="WA-365-P" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -217,7 +228,7 @@
   <component name="RunManager" selected="Application.OPMain">
     <configuration name="CreateSearchOP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.rbop.examples.CreateSearchOP" />
-      <module name="RB_OP2" />
+      <module name="RB_Local" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.rbop.examples.*" />
@@ -230,7 +241,7 @@
     </configuration>
     <configuration name="OPMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.rbop.examples.OPMain" />
-      <module name="RB_OP2" />
+      <module name="RB_Local" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.rbop.examples.*" />
@@ -243,7 +254,7 @@
     </configuration>
     <configuration name="OPMainConsistency" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.rbop.examples.OPMainConsistency" />
-      <module name="RB_OP2" />
+      <module name="RB_Local" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.rbop.examples.*" />
@@ -273,6 +284,14 @@
       <option name="presentableId" value="Default" />
       <updated>1546454836914</updated>
     </task>
+    <task id="LOCAL-00001" summary="This version runs on Rachel's local machine with an H2 database">
+      <created>1571804619866</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571804619866</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -285,9 +304,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="107" width="964" height="555" extended-state="0" />
+    <frame x="294" y="86" width="1104" height="526" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49520767" visible="true" weight="0.2462039" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49520767" visible="true" weight="0.21845575" />
       <window_info id="Structure" order="1" sideWeight="0.50479233" side_tool="true" weight="0.36807817" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -296,7 +315,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5014006" side_tool="true" weight="0.21061946" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32023576" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6361465" weight="0.36933047" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6361465" weight="0.3940092" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49955317" weight="0.35740072" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -343,6 +362,10 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout-to-restore>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="This version runs on Rachel's local machine with an H2 database" />
+    <option name="LAST_COMMIT_MESSAGE" value="This version runs on Rachel's local machine with an H2 database" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -372,7 +395,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/rbop/examples/SuggestDifferentColumnORIGINAL.java" />
-    <entry file="file://$PROJECT_DIR$/RB_OP2.iml">
+    <entry file="file://$PROJECT_DIR$/RB_Local.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rbop/examples/MissingCanonicalRuleORIGINAL.java" />
@@ -635,15 +658,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="1080">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rbop/examples/OPMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
