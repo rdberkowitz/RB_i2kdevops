@@ -195,7 +195,7 @@ public class SuggestDifferentColumn extends SingleRowRule {
                                         in=in.replace(h,"").trim(); //take out the original column name h
                                         //First add stuff to Adders table
                                         if (adders2.keySet().contains(k)) { //Column k has already been reported in adders:
-                                            List<String> temp = adders.get(k);
+                                            List<String> temp = adders2.get(k);
                                            // temp.add(in);
                                             temp.add(orig_in);
                                             adders2.put(k, temp);
@@ -234,7 +234,6 @@ public class SuggestDifferentColumn extends SingleRowRule {
                     set.addAll(update_keys);
                     update_keys.clear();
                     update_keys.addAll(set);
-                    System.out.println(update_keys);
                     for (String k : update_keys) {
                         //Here is an empty table to record add/remove keys for each column
                         List<String> add_keys = new ArrayList<>();
@@ -268,7 +267,22 @@ public class SuggestDifferentColumn extends SingleRowRule {
                             }
                         }
                         //remove empty values from update list
-                        for (String u:update){ if (u==""){update.remove(u);} }
+                        List<String> update_temp = new ArrayList<>();
+                       /* for (String u:update){
+                            System.out.println("check  "+u);
+                            if (u==""){
+                                System.out.println("REMOVING "+u);
+                                update.remove(u);
+                                update = update;
+                                System.out.println("new update list "+update);
+                            }
+                        }*/
+                        for (String u:update){
+                            if (u!=""){
+                                update_temp.add(u);
+                            }
+                        }
+                        update = update_temp;
 
                         //remove original column synonym values from each item
                         List<String> finalupdate = new ArrayList<>();

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public abstract class SingleRowRule {
     public abstract String getRealValues();
-    public List<String> headers = Arrays.asList(new String[]{"Mapped_Term","Tag","Oilfield_Places","Source","Comments","Date","Editor","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Type","County","Size_Class","Fully_Resolved","Companies","Operator","Onshore_Offshore"});
+    public List<String> headers = Arrays.asList(new String[]{"Mapped_Term","Tag","Oilfield_Places","Source","Comments","Date","Editor","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Type","County","Size_Class","Fully_Resolved","Companies","Operator","Onshore_Offshore","Giant","Date_Discovered","Date_On_Stream","Depletion_Date","Reserves_Toe","Water_Depth","Deepwater","Development_Type","USGS_Topo_Map"});
 
     public RuleResult evaluateRule(ResultSet rs, int row, Map<String, String> UpdateRow) {
         RuleResult result = evaluate(rs, UpdateRow);

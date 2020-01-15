@@ -20,7 +20,7 @@ public class RemoveWordsReservedForOtherColumns extends SingleRowRule {
     public RuleResult evaluate(ResultSet rs, Map<String, String> UpdateRow) {
 
         //Things to compare
-        List<String> comps = Arrays.asList(new String[]{"Field","Formation"});
+        List<String> comps = Arrays.asList(new String[]{"Field"});
 
         //Things that are words reserved for an individual column
         Map<String, List<String>> cols1 = FixedLists.LegalValues;

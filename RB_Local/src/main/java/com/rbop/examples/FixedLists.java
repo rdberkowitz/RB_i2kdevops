@@ -31,16 +31,24 @@ public class FixedLists {
         countryPair1.setL("USA");countryPair1.setR("United States");countrySynonyms.add(countryPair1);
 
         //build list of word replacement pairs for next column
-     /*   List<Pair<String,String>> countryregionSynonyms = new ArrayList<Pair<String,String>>();
+        List<Pair<String,String>> countryregionSynonyms = new ArrayList<Pair<String,String>>();
         Pair<String, String> countryregionPair1 = new Pair<String,String>();
         Pair<String, String> countryregionPair2 = new Pair<String,String>();
-        countryregionPair1.setL("Abruzzi and Molise");countryregionPair1.setR("Abruzzo;Molise");countryregionSynonyms.add(countryregionPair1);
-*/
+        countryregionPair1.setL("Ghana Offshore");countryregionPair1.setR("Gulf of Guinea");countryregionSynonyms.add(countryregionPair1);
+
+
+        //build list of word replacement pairs for next column
+        List<Pair<String,String>> formationSynonyms = new ArrayList<Pair<String,String>>();
+        Pair<String, String> formationPair1 = new Pair<String,String>();
+        Pair<String, String> formationPair2 = new Pair<String,String>();
+        formationPair1.setL("dolomites");formationPair1.setR("dolomite");formationSynonyms.add(formationPair1);
+
 
         //then add each list of pairs to the map
         Map<String, List<Pair<String, String>>> aMap = new HashMap<>();
         aMap.put("Rock_Type", rocktypeSynonyms);
         aMap.put("Country", countrySynonyms);
+        aMap.put("Country_Region", countryregionSynonyms);
       //  aMap.put("Country_Region", countryregionSynonyms);
         MappedValues = Collections.unmodifiableMap(aMap);
     }
@@ -58,8 +66,8 @@ public class FixedLists {
     public static final Map<String, List<String>> LegalValues;
     static {
         Map<String, List<String>> aMap = new HashMap<>();
-        aMap.put("Geologic_Age", Arrays.asList(new String[]{"PALEOCENE","DANIAN","TITHONIAN","LEONARDIAN","WOLFCAMPIAN", "TRIASSIC", "PERMIAN", "MIOCENE", "JURASSIC", "CRETACEOUS", "TURONIAN", "SILURIAN", "PLIOCENE", "PENNSYLVANIAN", "PALEOZOIC", "PALEOGENE", "ORDOVICIAN", "OLIGOCENE", "NEOGENE", "MISSISSIPPIAN", "MIOCENE", "EOCENE", "DEVONIAN", "MESSIANIAN", "TERTIARY", "ALBIAN", "KIMMERIDGIAN", "GUADALUPIAN", "FURONGIAN", "GIVETIAN", "CENOMANIAN", "CARBONIFEROUS", "APTIAN", "BARREMIAN", "ALBIAN", "MESOZOIC", "PLEISTOCENE", "CENOZOIC", "CAMBRIAN"}));
-        aMap.put("Rock_Type", Arrays.asList(new String[]{"SANDSTONE", "SHALE", "CARBONATE", "TURBIDITE", "SILTSTONE", "LIMESTONE"}));
+        aMap.put("Geologic_Age", Arrays.asList(new String[]{"CISURALIAN","PALEOCENE","DANIAN","TITHONIAN","LEONARDIAN","WOLFCAMPIAN", "TRIASSIC", "PERMIAN", "MIOCENE", "JURASSIC", "CRETACEOUS", "TURONIAN", "SILURIAN", "PLIOCENE", "PENNSYLVANIAN", "PALEOZOIC", "PALEOGENE", "ORDOVICIAN", "OLIGOCENE", "NEOGENE", "MISSISSIPPIAN", "MIOCENE", "EOCENE", "DEVONIAN", "MESSIANIAN", "TERTIARY", "ALBIAN", "KIMMERIDGIAN", "GUADALUPIAN", "FURONGIAN", "GIVETIAN", "CENOMANIAN", "CARBONIFEROUS", "APTIAN", "BARREMIAN", "ALBIAN", "MESOZOIC", "PLEISTOCENE", "CENOZOIC", "CAMBRIAN"}));
+        aMap.put("Rock_Type", Arrays.asList(new String[]{"IGNEOUS","METAMORPHIC","SEDIMENTARY","SANDSTONE", "SHALE", "CARBONATE", "TURBIDITE", "SILTSTONE", "LIMESTONE"}));
         aMap.put("Onshore_Offshore", Arrays.asList(new String[]{"ONSHORE", "OFFSHORE"}));
         aMap.put("Type", Arrays.asList(new String[]{"OIL", "GAS", "CONDENSATE", "HEAVY OIL","BITUMEN","COAL","COALBED METHANE"}));
         LegalValues = Collections.unmodifiableMap(aMap);
@@ -70,10 +78,11 @@ public class FixedLists {
     public static final Map<String, List<String>> LegalCanonicals;
     static {
         Map<String, List<String>> aMap = new HashMap<>();
-        aMap.put("Formation", Arrays.asList(new String[]{"reservoir","formation","anticline"}));
-        aMap.put("Basin", Arrays.asList(new String[]{"graben","basin","terrace"}));
+      //  aMap.put("Formation", Arrays.asList(new String[]{"reservoir","formation","anticline"}));
+        aMap.put("Formation", Arrays.asList(new String[]{"reservoir","formation","anticline","shale","sandstone","limestone","clastics","dolomite","group","bars","structure","trend","lime"}));
+        aMap.put("Basin", Arrays.asList(new String[]{"graben","basin","terrace","shelf","depression","high","uplift"}));
         aMap.put("Well", Arrays.asList(new String[]{"well"}));
-        aMap.put("Field", Arrays.asList(new String[]{"field"}));
+        aMap.put("Field", Arrays.asList(new String[]{"field","complex"}));
         //aMap.put("Block", Arrays.asList(new String[]{"block","permit"}));
         LegalCanonicals = Collections.unmodifiableMap(aMap);
     }
@@ -82,8 +91,8 @@ public class FixedLists {
     public static final Map<String, List<String>> Synonyms;
     static {
         Map<String, List<String>> aMap = new HashMap<>();
-        aMap.put("Field", Arrays.asList(new String[]{"field","prospect","project","acreage","Acreage"}));
-        aMap.put("Formation", Arrays.asList(new String[]{"reservoir","formation","play","anticline","syncline","trend","member","structure","group"}));
+        aMap.put("Field", Arrays.asList(new String[]{"field","prospect","project","acreage","Acreage","oil discovery","Oil Discovery"}));
+        aMap.put("Formation", Arrays.asList(new String[]{"reservoir","formation","play","anticline","syncline","trend","member","structure","group","member","chalk"}));
         aMap.put("Basin", Arrays.asList(new String[]{"graben","basin","terrace","megabasin"}));
         aMap.put("Well", Arrays.asList(new String[]{"well"}));
         Synonyms = Collections.unmodifiableMap(aMap);
@@ -103,7 +112,7 @@ public class FixedLists {
     static {
         Map<String, List<String>> aMap = new HashMap<>();
         aMap.put("Asia", Arrays.asList(new String[]{"Afghanistan", "Azerbaijan", "Bangladesh", "Brunei", "Cambodia", "China", "India", "Indonesia", "Japan", "Kazakhstan", "Kyrgysztan", "Malaysia", "Mongolia", "Myanmar", "North Korea", "Pakistan", "Phillipines", "Russia", "South Korea", "Sri Lanka", "Taiwan", "Tajikistan", "Thailand", "Turkmenistan", "Uzbekistan", "Vietnam"}));
-        aMap.put("North America", Arrays.asList(new String[]{"Belize", "Canada", "Costa Rica", "Cuba", "Dominican Republic", "Greenland", "Guatemala", "Haiti", "Honduras", "Jamaica", "Mexico", "Nicaragua", "Panama", "Trinidad and Tobago", "United States"}));
+        aMap.put("North America", Arrays.asList(new String[]{"Belize", "Canada", "Costa Rica", "Cuba", "Dominican Republic", "Greenland","Grenada", "Guatemala", "Haiti", "Honduras", "Jamaica", "Mexico", "Nicaragua", "Panama", "Trinidad and Tobago", "United States"}));
         aMap.put("South America", Arrays.asList(new String[]{"Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Falkland Islands", "Guyana", "Peru", "Suriname", "Uruguay", "Venezuela"}));
         aMap.put("Europe", Arrays.asList(new String[]{"Albania", "Austria", "Belarus", "Belgium", "Bosnia and Herzegovinia", "Croatia", "Czech Republic", "Denmark", "Estonia", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Latvia", "Lithuania", "Moldova", "Netherlands", "Norway", "Poland", "Portugal", "Romania", "Russia", "Serbia", "Slovakia", "Slovenia", "Spain", "Switzerland", "Ukraine", "United Kingdom"}));
         aMap.put("Africa", Arrays.asList(new String[]{"Angola", "Botswana", "Cameroon", "Central African Republic", "Chad", "Cote d'Ivoire", "Democratic Republic of the Congo", "Equatorial Guinea", "Ethiopia", "Gabon", "Ghana", "Ivory Coast", "Kenya", "Liberia", "Madagascar", "Mali", "Mauritania", "Mozambique", "Namibia", "Nigeria", "Republic of Niger", "Republic of the Congo", "Sao Tome and Principe", "Senegal", "South Africa", "South Sudan", "Sudan", "Tanzania", "Uganda", "West Africa", "Zambia"}));
@@ -123,8 +132,8 @@ public class FixedLists {
         Facilities = Collections.unmodifiableMap(aMap);
     }
 
-    public static final List<String> Smallwords = Arrays.asList(new String[]{"and", "of", "in", "de", "do", "al","a"}); //this is for caps
-    public static final List<String> Replacers =  Arrays.asList(new String[]{"LNG project","discovery","project","Project","prospect","production sharing contract","basin", "field", "well", "block"});
+    public static final List<String> Smallwords = Arrays.asList(new String[]{"and", "of", "in", "de", "do", "al","a","the"}); //this is for caps
+    public static final List<String> Replacers =  Arrays.asList(new String[]{"LNG project","discovery","project","Project","prospect","production sharing contract","basin", "field", "well", "block","d'Ivoire"});
 
 
     public static final Map<String, List<String>> CountryRegions;
@@ -174,7 +183,7 @@ public class FixedLists {
         aMap.put("France", Arrays.asList(new String[]{"Grand Est", "Mediterranean Sea", "Nouvelle-Aquitaine"}));
         aMap.put("Gabon", Arrays.asList(new String[]{"Gabon Offshore"}));
         aMap.put("Germany", Arrays.asList(new String[]{"Bavaria", "Lower Saxony", "North Sea"}));
-        aMap.put("Ghana", Arrays.asList(new String[]{"Ghana Offshore"}));
+        aMap.put("Ghana", Arrays.asList(new String[]{"Gulf of Guinea"}));
         aMap.put("Greece", Arrays.asList(new String[]{"Aegean Sea", "Mediterranean Sea"}));
         aMap.put("Greenland", Arrays.asList(new String[]{"Arctic Ocean", "Melville Bay", "North Atlantic Ocean|Irminger Sea", "North Greenland", "Northeast Greenland", "Southern West Greenland", "West Greenland"}));
         aMap.put("Grenada", Arrays.asList(new String[]{"Caribbean Sea"}));
@@ -195,7 +204,7 @@ public class FixedLists {
         aMap.put("Jamaica", Arrays.asList(new String[]{}));
         aMap.put("Japan", Arrays.asList(new String[]{"Hokkaido Island", "Honshu Island", "Honshu Island|Akita Prefecture", "Honshu Island|Niigata Prefecture", "Honshu Island|Mie Prefecture Offshore", "Japan Offshore", "Japan Offshore|North Pacific Ocean", "Kyushu Island", "Yamagata Prefecture"}));
         aMap.put("Jordan", Arrays.asList(new String[]{"Eastern Jordan", "Wadi al Azraq"}));
-        aMap.put("Kenya", Arrays.asList(new String[]{}));
+        aMap.put("Kenya", Arrays.asList(new String[]{"Kenya Offshore","Northern Kenya"}));
         aMap.put("Kazakhstan", Arrays.asList(new String[]{"Aktobe Province", "Almaty Province", "Atyrau Province", "Atyrau Province|Caspian Sea", "Caspian Sea", "Kyzylorda Province", "Manghystau Province", "Mangystau Province|Caspian Sea", "North Kazakhstan Province", "West Kazakhstan Province"}));
         aMap.put("Kuwait", Arrays.asList(new String[]{"Ahmadi Governorate", "Asimah Governorate", "Farwaniya Governorate", "Jafra Governorate", "Jahra Governorate", "North Kuwait", "Northwest Kuwait", "Saudi Arabia - Kuwait Neutral Zone|Arabian Gulf"}));
         aMap.put("Kyrgyzstan", Arrays.asList(new String[]{}));
@@ -227,7 +236,7 @@ public class FixedLists {
         aMap.put("Pakistan", Arrays.asList(new String[]{"Balochistan Province", "Balochistan Province|Dera Bugti District", "Balochistan Province|Zhob District", "Khyber Pakhtunkhwa Province", "Khyber Pakhtunkhwa Province|Karak District", "Khyber Pakhtunkhwa Province|Peshawar District", "Pakistan Offshore", "Punjab Province", "Punjab Province|Chakwal District", "Punjab Province|D.G. Khan District", "Punjab Province|Rawalpindi District", "Sindh Province", "Sindh Province|Dadu District", "Sindh Province|Ghotki District", "Sindh Province|Khaipur District", "Sindh Province|Sanghar District"}));
         aMap.put("Palestine", Arrays.asList(new String[]{"Gaza"}));
         aMap.put("Panama", Arrays.asList(new String[]{"Panama Offshore|Pacific Ocean"}));
-        aMap.put("Papua New Guinea", Arrays.asList(new String[]{"Bismarck Sea", "Gulf of Papua", "Gulf Province", "North Highlands", "Solomon Islands", "Solomon Islands Offshore", "Solomon Sea", "Southern Highlands"}));
+        aMap.put("Papua New Guinea", Arrays.asList(new String[]{"Bismarck Sea", "Gulf of Papua", "Gulf Province", "North Highlands", "Solomon Islands", "Solomon Islands Offshore", "Solomon Sea", "Southern Highlands","Western Province"}));
         aMap.put("Paraguay", Arrays.asList(new String[]{"Chaco Region"}));
         aMap.put("Peru", Arrays.asList(new String[]{"Cusco Department", "Northwest Peru Offshore", "Peru Offshore"}));
         aMap.put("Philippines", Arrays.asList(new String[]{"Albay Province", "Leyte Province", "Pacific Ocean", "Philippines Offshore", "West Philippine Sea"}));
@@ -237,7 +246,7 @@ public class FixedLists {
         aMap.put("Republic of Niger", Arrays.asList(new String[]{}));
         aMap.put("Republic of the Congo", Arrays.asList(new String[]{"Republic of the Congo Offshore"}));
         aMap.put("Romania", Arrays.asList(new String[]{"Black Sea", "Bukovina Region", "Northern Romania", "Oltenia", "Romania Offshore", "Saros-Sighisoara Region", "Suceava"}));
-        aMap.put("Russia", Arrays.asList(new String[]{"Arctic Ocean", "Barents Sea", "Barents Sea|Kara Sea", "Barents Sea|Pechora Sea", "Bering Sea", "Central Federal District", "Central Federal District|Tula Oblast", "Far Eastern Federal District", "Far Eastern Federal District|Chukotka Autonomous Okrug", "Far Eastern Federal District|Kamchatka Krai", "Far Eastern Federal District|Kamchatka Peninsula", "Far Eastern Federal District|Khabarovsk Krai", "Far Eastern Federal District|Northern Sakhalin", "Far Eastern Federal District|Primorsky Krai", "Far Eastern Federal District|Sakha Republic (Yakutia)", "Far Eastern Federal District|Sakhalin Island", "Far Eastern Federal District|Sakhalin Island Offshore", "Far Eastern Federal District|Sea of Okhotsk", "North Caucasian Federal District", "North Caucasian Federal District|Chechnya", "North Caucasian Federal District|Dagestan", "North Caucasian Federal District|Dagestan|Caspian Sea", "North Caucasian Federal District|Ingushetia", "North Caucasian Federal District|Stavropol Krai", "Northwestern Federal District", "Northwestern Federal District|Kaliningrad Oblast", "Northwestern Federal District|Kaliningrad Oblast|Baltic Sea", "Northwestern Federal District|Komi Republic", "Northwestern Federal District|Nenets Autonomous Okrug", "Northwestern Federal District|Murmansk Oblast", "Northwestern Federal District|Nenets Autonomous Okrug|Zapolyarny District", "Northwestern Federal District|Novgorod Oblast", "Sea of Okhotsk", "Siberian Federal District", "Siberian Federal District|Buryatia", "Siberian Federal District|Irkutsk Oblast", "Siberian Federal District|Kemerovo Oblast", "Siberian Federal District|Khakassia", "Siberian Federal District|Krasnoyarsk Krai", "Siberian Federal District|Krasnoyarsk Krai|Evenkia", "Siberian Federal District|Tomsk Oblast", "Siberian Federal District|Zabaykalsky Krai", "Southern Federal District", "Southern Federal District|Adygea", "Southern Federal District|Astrakhan Oblast", "Southern Federal District|Astrakhan Oblast|Caspian Sea", "Southern Federal District|Kalmykia", "Southern Federal District|Kalmykia|Caspian Sea", "Southern Federal District|Krasnodar Krai", "Southern Federal District|Volgograd Oblast", "Ural Federal District", "Ural Federal District|Khanty-Mansi Autonomous Okrug", "Ural Federal District|Khanty-Mansi Autonomous Okrug|Novosibirsk Oblast", "Ural Federal District|Tyumen Oblast", "Ural Federal District|Yamalo-Nenets Autonomous Okrug", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Gulf of Ob", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Krasnoselkupsky District", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Purovsky District", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Taz Bay", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Tazovksy District", "Volga Federal District", "Volga Federal District|Bashkortostan", "Volga Federal District|Orenburg Oblast", "Volga Federal District|Perm Krai", "Volga Federal District|Samara Oblast", "Volga Federal District|Saratov Oblast", "Volga Federal District|Tatarstan", "Volga Federal District|Udmurtia"}));
+        aMap.put("Russia", Arrays.asList(new String[]{"Arctic Ocean", "Barents Sea", "Barents Sea|Kara Sea", "Barents Sea|Pechora Sea", "Bering Sea", "Central Federal District", "Central Federal District|Tula Oblast", "Far Eastern Federal District", "Far Eastern Federal District|Chukotka Autonomous Okrug", "Far Eastern Federal District|Kamchatka Krai", "Far Eastern Federal District|Kamchatka Peninsula", "Far Eastern Federal District|Khabarovsk Krai", "Far Eastern Federal District|Northern Sakhalin", "Far Eastern Federal District|Primorsky Krai", "Far Eastern Federal District|Sakha Republic (Yakutia)", "Far Eastern Federal District|Sakhalin Island", "Far Eastern Federal District|Sakhalin Island Offshore", "Far Eastern Federal District|Sea of Okhotsk", "North Caucasian Federal District", "North Caucasian Federal District|Chechnya", "North Caucasian Federal District|Dagestan", "North Caucasian Federal District|Dagestan|Caspian Sea", "North Caucasian Federal District|Ingushetia", "North Caucasian Federal District|Stavropol Krai", "Northwestern Federal District", "Northwestern Federal District|Kaliningrad Oblast", "Northwestern Federal District|Kaliningrad Oblast|Baltic Sea", "Northwestern Federal District|Komi Republic", "Northwestern Federal District|Nenets Autonomous Okrug", "Northwestern Federal District|Murmansk Oblast", "Northwestern Federal District|Nenets Autonomous Okrug|Zapolyarny District", "Northwestern Federal District|Novgorod Oblast", "Sea of Okhotsk", "Siberian Federal District", "Siberian Federal District|Buryatia", "Siberian Federal District|Irkutsk Oblast", "Siberian Federal District|Kemerovo Oblast", "Siberian Federal District|Khakassia", "Siberian Federal District|Krasnoyarsk Krai","Siberian Federal District|Krasnoyarsk Krai|Laptev Sea", "Siberian Federal District|Krasnoyarsk Krai|Evenkia", "Siberian Federal District|Tomsk Oblast", "Siberian Federal District|Zabaykalsky Krai", "Southern Federal District", "Southern Federal District|Adygea", "Southern Federal District|Astrakhan Oblast", "Southern Federal District|Astrakhan Oblast|Caspian Sea", "Southern Federal District|Kalmykia", "Southern Federal District|Kalmykia|Caspian Sea", "Southern Federal District|Krasnodar Krai", "Southern Federal District|Volgograd Oblast", "Ural Federal District", "Ural Federal District|Khanty-Mansi Autonomous Okrug", "Ural Federal District|Khanty-Mansi Autonomous Okrug|Novosibirsk Oblast", "Ural Federal District|Tyumen Oblast", "Ural Federal District|Yamalo-Nenets Autonomous Okrug", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Gulf of Ob", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Krasnoselkupsky District", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Purovsky District", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Taz Bay", "Ural Federal District|Yamalo-Nenets Autonomous Okrug|Tazovksy District", "Volga Federal District", "Volga Federal District|Bashkortostan", "Volga Federal District|Orenburg Oblast", "Volga Federal District|Perm Krai", "Volga Federal District|Samara Oblast", "Volga Federal District|Saratov Oblast", "Volga Federal District|Saratov Volgograd Area","Volga Federal District|Tatarstan", "Volga Federal District|Udmurtia"}));
         aMap.put("Sao Tome and Principe", Arrays.asList(new String[]{"Gulf of Guinea"}));
         aMap.put("Saudi Arabia", Arrays.asList(new String[]{"Arabian Gulf", "Eastern Province", "Eastern Province|Al-Ahsa Governorate", "Eastern Province|Rub al Khali", "Red Sea", "Riyadh Province", "Saudi Arabia - Kuwait Neutral Zone", "Tabuk Province", "Tabuk Province|Midyan Peninsula"}));
         aMap.put("Senegal", Arrays.asList(new String[]{"Senegal Offshore"}));
@@ -273,7 +282,7 @@ public class FixedLists {
         aMap.put("Vietnam", Arrays.asList(new String[]{"South China Sea"}));
         aMap.put("West Africa", Arrays.asList(new String[]{}));
         aMap.put("West Bank and Gaza", Arrays.asList(new String[]{"Gaza Offshore"}));
-        aMap.put("Yemen", Arrays.asList(new String[]{"Hadhramaut Governorate", "Ma'rib Governorate", "Shabwah Governorate"}));
+        aMap.put("Yemen", Arrays.asList(new String[]{"Hadhramaut Governorate", "Ma'rib Governorate","Sana'a Governorate", "Shabwah Governorate"}));
         aMap.put("Zambia", Arrays.asList(new String[]{}));
         CountryRegions = Collections.unmodifiableMap(aMap);
     }

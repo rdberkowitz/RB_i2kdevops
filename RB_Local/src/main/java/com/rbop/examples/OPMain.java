@@ -16,9 +16,14 @@ public class OPMain {
             /* CONNECTION FOR OP_14 VERSION
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/i2kdocs","root","Qw58v6A8");
             ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM alist_geography WHERE id > 0 LIMIT 600"); */
-            Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_all");
-            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM ALIST_GEOGRAPHY_ALL WHERE Country='Yemen'");
-            List<String> headers = Arrays.asList(new String[]{"ROW NO.","Mapped_Term","Tag","Oilfield_Places","Source","Comments","Date","Editor","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Type","County","Size_Class","Fully_Resolved","Companies","Operator","Onshore_Offshore"});
+            Connection conn = DriverManager.getConnection("jdbc:h2:file://Users/rachelberkowitz/i2k/OPRB_new");
+            int sql_start = 0; //row number to start at
+            int sql_count = 500; //number of rows to evaluate
+            //String sql_string = "SELECT * FROM ALIST_GEOGRAPHY_ALL LIMIT "+ sql_start+", "+sql_count;
+            String sql_string = "SELECT * FROM ALIST_GEOGRAPHY_ALL WHERE Country_Region = 'Texas'";
+
+            ResultSet rs = conn.createStatement().executeQuery(sql_string);
+            List<String> headers = Arrays.asList(new String[]{"ROW NO.","Mapped_Term","Tag","Oilfield_Places","Source","Comments","Date","Editor","Region", "Country", "Country_Region", "Basin", "Leasing_Area", "Block", "Field", "Formation", "Well", "Rock_Type", "Geologic_Age", "Type","County","Size_Class","Fully_Resolved","Companies","Operator","Onshore_Offshore","Giant","Date_Discovered","Date_On_Stream","Depletion_Date","Reserves_Toe","Water_Depth","Deepwater","Development_Type","USGS_Topo_Map"});
             HashMap<Integer, ArrayList> OUTPUT = new HashMap<>();
             List<SingleRowRule> rules = new ArrayList();
 
@@ -132,12 +137,12 @@ public class OPMain {
                     ArrayList Values = o.getValue();
                     int last = (Values.size());
                     //This grabs the first 'real values' row
-                    fileWriter.append(String.valueOf(o.getKey()));
+                    fileWriter.append(String.valueOf(o.getKey()+sql_start));
                     fileWriter.append(" (OP vals)");
                     fileWriter.append(",");
                     fileWriter.append(Values.get(0).toString());
                     fileWriter.append("\r\n");
-                    fileWriter.append(String.valueOf(o.getKey()));
+                    fileWriter.append(String.valueOf(o.getKey()+sql_start));
                     fileWriter.append(" (errs)");
                     //Now go through all the OP headers
                     for (String h: headers){
@@ -158,7 +163,7 @@ public class OPMain {
                     }
                     fileWriter.append("\r\n");
                     //now add the UpdateRow as a 3rd row in each row of the file
-                    fileWriter.append(String.valueOf(o.getKey()));
+                    fileWriter.append(String.valueOf(o.getKey()+sql_start));
                     fileWriter.append(" (updates)");
                     fileWriter.append(Values.get(last-1).toString());
                     fileWriter.append("\r\n");

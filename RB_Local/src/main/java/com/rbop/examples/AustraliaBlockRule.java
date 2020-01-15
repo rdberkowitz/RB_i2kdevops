@@ -152,7 +152,7 @@ public class AustraliaBlockRule extends SingleRowRule {
                     String leasing_area2 = UpdateRow.get("Leasing_Area");
                     if (leasing_area2 == "") { leasing_area2 = leasing_area;}
                     String block2 = UpdateRow.get("Block");
-                    if (block2 == "") { block = block; }
+                    if (block2 == "") { block2 = block; }
                     List<String> leasing_areas = Arrays.asList(leasing_area2.split(";|\\|"));
                     List<String> blocks = Arrays.asList(block2.split(";"));
 
@@ -233,6 +233,7 @@ public class AustraliaBlockRule extends SingleRowRule {
                               finalblocks.addAll(newblocks);
                               finalblocks.addAll(okblocks);
                             String suggestion1 = String.join(";", finalblocks);
+                            System.out.println("suggestion for updaterow "+suggestion1);
                             UpdateRow.put("Block", suggestion1);
                         }
                     }
